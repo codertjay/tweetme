@@ -1,0 +1,8 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "dependencies": {
+    "react-typed": "^1.2.0",
+    "react-youtube": "^7.12.0"
+  }
+}

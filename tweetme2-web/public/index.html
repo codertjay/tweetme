@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta
+            name="description"
+            content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+
+
+    <title>Codertjay App</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+<div id="tweet-container"></div>
+
+<div class="" id="tweetme2" data-username="favour" data-can-tweet="false">
+
+</div>
+
+<script>
+    var path = window.location.pathname
+    console.log ('path', path)
+    var idRegex = /(?<tweetid>\d+)/   // in python   /(?p<id>\d+)/
+    var match = path.match(idRegex)
+
+    if (match) {
+        var tweetId = match.groups.tweetid
+        console.log ('tweetId', tweetId)
+        var tweetme2 = document.getElementById ("tweetme2")
+        tweetme2.className = 'd-none'
+
+        var tweetEl = "<div id='tweetme-2-detail'" +
+            " data-tweet-id= " + tweetId + " data-class-name='col-6 mx-auto'>"
+            + tweetId +
+            "</div>"
+        console.log ('tweetEl', tweetEl)
+        var mainContainer = document.getElementById ("tweet-container")
+        mainContainer.innerHTML = tweetEl
+    }
+
+
+</script>
+
+</body>
+</html>
